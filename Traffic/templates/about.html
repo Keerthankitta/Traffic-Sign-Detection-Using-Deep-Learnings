@@ -1,0 +1,179 @@
+{% extends 'Nav.html' %}
+
+{% block content %}
+<div class="about-container">
+    <h2> About Traffic Sign Detection</h2>
+    <p class="intro">
+        The <span class="highlight">Traffic Sign Detection</span> is an advanced deep learning application
+        designed to recognize and classify traffic signs from images.
+        It helps drivers and autonomous vehicles understand road signs quickly and accurately,
+        improving <span class="glow-text">road safety 🚦</span>.
+    </p>
+
+    <div class="about-card">
+        <h3>✨ Features</h3>
+        <ul>
+            <li>Upload any traffic sign image for instant classification.</li>
+            <li>Displays prediction with glowing confidence score.</li>
+            <li>User-friendly, interactive and fast.</li>
+            <li>Responsive design for all devices.</li>
+        </ul>
+    </div>
+
+    <div class="about-card">
+        <h3>⚙️ About the Project</h3>
+        <p>
+            This project is built using <b>Flask</b> for the web interface and a 
+            <b>deep learning model</b> trained on a traffic sign dataset.  
+            The interface is <span class="glow-text">user-friendly and futuristic</span>, 
+            making it easy for users to interact with the classifier.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h3>👨‍💻 Developer</h3>
+        <p>
+            Developed by <span class="highlight">KEERTHAN S</span>  
+            as part of a deep learning and web development project.
+        </p>
+    </div>
+</div>
+
+<style>
+/* Background with animated gradient & moving lights */
+body {
+    background: linear-gradient(-45deg, #1a1a2e, #16213e, #0f3460, #53354a);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Glowing container */
+.about-container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(20, 20, 40, 0.85);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(0, 255, 200, 0.4), 0 0 50px rgba(255, 0, 150, 0.2);
+    animation: floatBox 6s ease-in-out infinite;
+}
+
+@keyframes floatBox {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* Headings */
+h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #ffb703, 0 0 20px #ffb703;
+    letter-spacing: 2px;
+}
+
+h3 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #8ef6e4;
+    text-shadow: 0 0 6px #8ef6e4;
+}
+
+/* Paragraphs */
+p, li {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #e0e0e0;
+}
+
+.intro {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.highlight {
+    color: #ffb703;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ffb703, 0 0 20px #ffb703;
+}
+
+.glow-text {
+    color: #00f7ff;
+    text-shadow: 0 0 8px #00f7ff, 0 0 20px #00f7ff;
+}
+
+/* Cards with hover effects */
+.about-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,255,150,0.2);
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-card:hover {
+    box-shadow: 0 0 25px rgba(0,255,200,0.7), 0 0 50px rgba(0,200,255,0.3);
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Glowing hover border effect */
+.about-card::before {
+    content: "";
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 15px;
+    background: linear-gradient(60deg, #ff0099, #493240, #00f7ff, #39ff14);
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.about-card:hover::before {
+    opacity: 1;
+    animation: glowing 8s linear infinite;
+}
+
+@keyframes glowing {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    margin: 12px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-container { padding: 25px; margin: 30px; }
+    h2 { font-size: 28px; }
+    h3 { font-size: 20px; }
+    p, li { font-size: 16px; }
+}
+</style>
+{% endblock %}
